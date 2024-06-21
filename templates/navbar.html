@@ -1,0 +1,49 @@
+<header>
+  <div class="navbar">
+    <div class="logo"><a href="/"> Auction House</a></div>
+    <ul class="links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/Contact">Contact</a></li>
+      {% if current_user.is_authenticated %}
+      <li><a href="/post">Post</a></li>
+      <li><a href="/profile/{{ profile['id'] }}">Profile</a></li>
+      {% else %}
+      <li><a href="/register">Profile</a></li>
+      {% endif %}
+    </ul>
+    {% if current_user.is_authenticated %}
+    <li><a href="/logout" class="action_log">Log Out</a></li>
+    {% else %}
+    <a href="/register" class="action_btn">Get Started</a>
+    {% endif %}
+    <div class="toggle_btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+  <div class="dropdown_menu">
+    <li><a href="/home">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/Contact">Contact</a></li>
+      <li><a href="/profile">Profile</a></li>
+      {% if current_user.is_authenticated %}
+      <li><a href="/post">Post</a></li>
+      <li><a href="/logout" class="action_log">Log Out</a></li>
+      {% else %}
+      <li><a href="/register" class="action_btn">Get Started</a></li>
+      {% endif %}
+  </div>
+</header>
+<script>
+  const toggleBtn = document.querySelector('.toggle_btn')
+  const toggleBtnIcon = document.querySelector('.toggle_btn i')
+  const dropDownMenu = document.querySelector('.dropdown_menu')
+
+  toggleBtn.onclick = function() {
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
+    toggleBtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
+  }
+</script>

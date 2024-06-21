@@ -1,0 +1,59 @@
+{% extends 'nothingpage.html' %}
+
+{% block noth %}
+<div class="container">
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <h1>Sign Up</h1>
+        <div class="form-input">
+            {{form.username(placeholder="Username")}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <style>
+                .user-2 {
+                  animation: user-2 1s cubic-bezier(0.83, -0.07, 0, 1.04) both infinite alternate-reverse;
+              }
+              @keyframes user-2 {
+                0% {
+                  transform: translateY(0) translateX(0);
+                }
+                100% {
+                  transform: translateY(-1px) translateX(2px);
+                }
+              }
+              </style>
+                <circle class="user-2" cx="12" cy="7.858" r="2.5" stroke="#ffd700" stroke-width="1.5"/>
+                <rect width="10" height="4" x="7" y="13.926" stroke="#ffd700" stroke-width="1.5" rx="2"/>
+              </svg>
+              
+        </div>
+        <div class="form-input">
+            {{form.password(placeholder="Password")}}
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@keyframes lock{0%{transform:translateY(-2px)}to{transform:translateY(0)}}</style><path fill="#ffd700" d="M15.236 10.811a.736.736 0 01-.736-.736V8.811a2.5 2.5 0 00-5 0v5H8v-5a4 4 0 018 0v1.236a.764.764 0 01-.764.764z" style="animation:lock 1s cubic-bezier(1,-.43,0,1.29) both infinite alternate-reverse"/><path fill="#ffd700" d="M6.6 13.704a3 3 0 013-3h4.8a3 3 0 013 3v3a3 3 0 01-3 3H9.6a3 3 0 01-3-3v-3z"/><path fill="#ffd700" d="M9.6 11.454h4.8v-1.5H9.6v1.5zm7.05 2.25v3h1.5v-3h-1.5zm-2.25 5.25H9.6v1.5h4.8v-1.5zm-7.05-2.25v-3h-1.5v3h1.5zm2.25 2.25a2.25 2.25 0 01-2.25-2.25h-1.5a3.75 3.75 0 003.75 3.75v-1.5zm7.05-2.25a2.25 2.25 0 01-2.25 2.25v1.5a3.75 3.75 0 003.75-3.75h-1.5zm-2.25-5.25a2.25 2.25 0 012.25 2.25h1.5a3.75 3.75 0 00-3.75-3.75v1.5zm-4.8-1.5a3.75 3.75 0 00-3.75 3.75h1.5a2.25 2.25 0 012.25-2.25v-1.5zm1.543 5.198a.857.857 0 011.714 0v.104a.857.857 0 11-1.714 0v-.104z"/>
+            </svg>
+              
+        </div>
+        <div class="form-input">
+            {{form.verify(placeholder="Verify Password")}}
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@keyframes check {
+                to {
+                  stroke-dashoffset: 0;
+                }
+              }</style><path stroke="#ffd700" stroke-width="1.5" d="M5.9 8.053a2 2 0 011.507-1.938l4.683-1.192 4.517 1.184A2 2 0 0118.1 8.042v3.75a7 7 0 01-3.98 6.314l-.755.361a3 3 0 01-2.557.015l-.856-.398A7 7 0 015.9 11.736V8.053z"/><path stroke="#ffd700" stroke-linecap="round" stroke-width="1.5" d="M9.215 12.052l1.822 1.805 3.748-3.714" style="animation:check 2s infinite cubic-bezier(.99,-.1,.01,1.02)" stroke-dashoffset="100" stroke-dasharray="100"/>
+            </svg>
+              
+        </div>
+        <div class="form-input">
+          {{form.mail(placeholder="Email")}}
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@keyframes open{0%{transform:translateX(10px) scale(0);transform-origin:50% 100%}to{transform:scale(1);transform-origin:50% 100%}}</style><rect width="12" height="10" x="6" y="8.804" stroke="#ffd700" stroke-width="1.5" rx="2"/><path fill="#fff" stroke="#ffd700" stroke-width="1.5" d="M9 6.196a1 1 0 011-1h4a1 1 0 011 1v5.082a1 1 0 01-.37.777l-2.006 1.628a1 1 0 01-1.263-.002l-1.993-1.626A1 1 0 019 11.28V6.196z" style="animation:open 2s cubic-bezier(.49,.39,.35,1.06) both infinite"/><path stroke="#ffd700" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.465 11.413l3.573 2.783 3.497-2.783"/></svg>
+        </div>
+        {{form.submit(class="btn")}}
+        <div class="login-link">
+            <p>Already Have an Account? <a href="/login">Login</a></p>
+        </div>
+        <div class="go">
+          <a href="/">GoBack</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

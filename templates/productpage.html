@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="pg">
+    <div class="dt">
+        <img src="/static/images/prodim/{{ product['img']}}">
+        <div class="tit">
+        {{product['name']}}
+        </div>
+        <div class="det">
+            <div class="price">
+            <p>Starting price:{{product['price']}}</p>
+            </div>
+            <div class="desc">
+            {{product['desc']}}
+             </div>
+             <div class="buttons">
+                <a href="/">Go Back</a>
+                {% if current_user.username == "ADMIN" %}
+      <a href="/del/{{ product['id'] }}" class="del">Del prod</a>
+      <a href="/edit/{{ product['id'] }}" class="edit">Edit prod</a>
+      {% endif %}
+             </div>
+        </div>
+    </div>
+   
+</div>
+{% endblock %}

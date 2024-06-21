@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+<div class="container">
+  <div class="card-container">
+{% for product in products %}
+  <div class="card">
+    <img src="/static/images/prodim/{{ product['img']}}" alt="">
+    <div class="card-content">
+      <h3>{{product['name']}}</h3>
+      <p>{{product['desc']}}</p>
+      <p>Current bid: {{product['price']}}&dollar;</p>
+      {% if current_user.username == "ADMIN" %}
+      
+      <a href="/del/{{ product['id'] }}" class="del">Del prod</a>
+      <a href="/edit/{{ product['id'] }}" class="edit">Edit prod</a>
+      <a href="/product/{{ product['id'] }}" class="view">View Page</a>
+      
+      {% else %}
+      {% if current_user.is_authenticated %}
+
+      <a  href="/bid/{{product['id']}}" class="bid">Bid</a>
+      {% endif %}
+      <a href="/product/{{ product['id'] }}" class="view">View Page</a>
+      {% endif %}
+    
+      </div>
+    </div>
+{% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+    
+
+

@@ -1,0 +1,95 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.card {
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 12px;
+
+    width: calc(33% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 263px;
+    height: auto;
+
+}
+.bid{
+    background-color: green;
+
+}
+.bid:hover{
+    color: black;
+}
+
+
+
+.card img {
+    width: 100%;
+    height: 55%;
+    border-bottom: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    color: #fff;
+    margin: 10px 0;
+}
+
+.card-content p {
+    color: #ffffff;
+    font-size: 14px;
+}
+.card a{
+    scale: 1;
+    transition: scale .2s ease;
+    border-radius: 5px;
+    display: flex;
+    width: 88%;
+    justify-content: space-between;
+    padding: 3px;
+    margin: 6px;
+  
+}
+.card a:hover{
+    scale: 1.05;
+}
+.view{
+
+    left: 5px;
+    background-color: #5a6268;
+}
+.view:hover{
+    color: black;
+}
+.del{
+    background-color: red;
+}
+.del:hover{
+    color: pink;
+}
+.edit{
+    background-color: rgb(122, 122, 3);
+
+}
+
+
+
+

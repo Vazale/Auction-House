@@ -1,0 +1,27 @@
+<div class="">
+  <b><p class="text-center text-warning">Todays Best</p></b>
+  <div class="size border">
+    <div class="card-group mt-3">
+      {% for product in products %}
+        <div class="card cardcolor">
+          <img src="/static/images/prodim/{{ product['img'] }}" class="card-img-top"  alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{product['name']}}</h5>
+            <p class="card-text">{{product['desc']}}</p>
+            <p class="card-text" class="text-body-secondary">{{product['price']}}</p>
+            <button type="button" class="btn btn-success">BID</button>
+            {% if current_user.username == "ADMIN" %} 
+            <a href="/del/{{product['id']}}" class="btn btn-danger">Delete Product</a>
+            <a href="/edit/{{ product['id'] }}" class="btn btn-warning">Edit</a>
+            {% endif %}
+            <a href="/product/{{ product['id'] }}"><button type="button" class="btn btn-primary mt-1">See Details</button></a>
+
+          </div>
+        </div>
+          {% endfor %}
+      
+      
+
+    </div>
+  </div>
+</div>

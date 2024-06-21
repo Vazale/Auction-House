@@ -1,0 +1,38 @@
+{% extends 'nothingpage.html' %}
+
+{% block noth %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <h1>Post Product</h1>
+
+        <div class="form-input">
+            {{form.name(placeholder="Product Name")}}
+            
+              
+        </div>
+        <div class="form-input">
+            {{form.price(placeholder="Starting Price")}}
+           
+              
+        </div>
+        <div class="form-input">
+            {{form.desc(placeholder="Description")}}
+              
+        </div>
+
+        <div class="form-input">
+          <label for="img" class="custom-file-upload">
+            Upload 
+        </label>
+    <input id="file-upload" type="file" />
+          {{form.img(class="custom-file-upload", placeholder="Upload Image")}}
+             
+      </div>
+        {{form.submit(class="btn")}}
+        <div class="go">
+          <a href="/">GoBack</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

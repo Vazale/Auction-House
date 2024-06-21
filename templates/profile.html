@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="pg">
+    <div class="dt">
+        <a href="" class="hasd">
+            <img src="static/images/pfp images/{{ profile['profile_img']}}">
+        </a>
+        
+       
+        <div class="tit">
+        {{profile['username']}}
+        </div>
+        <div class="det">
+            <div class="price">
+            <p>Contact Mail:{{profile['mail']}}</p>
+            </div>
+            <div class="desc">
+           
+             </div>
+             <div class="buttons">
+                <a href="/">Go Back</a>
+                
+             </div>
+        </div>
+    </div>
+   
+</div>
+{% endblock %}
